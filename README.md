@@ -13,7 +13,7 @@ A simple Laravel application for showing results from the [LIV golf tour](https:
 
 I decided to use this API as in my free time you will often find me playing/practicing/watching golf, it's been a long term hobby and I have a real passion for it.
 
-As a starter kit I used my own [Laravel Starter Kit](https://github.com/joshdonnell/laravel-starter-kit) to ensure I had a solid foundation to build upon including tooling such as PHPStan, Rector and ESLint. I have included some elements of my Starter Kit's README to showcase the stack at a glance.
+As a starter kit I used my own [Laravel Starter Kit](https://github.com/joshdonnell/laravel-starter-kit-vue) to ensure I had a solid foundation to build upon including tooling such as PHPStan, Rector and ESLint. I have included some elements of my Starter Kit's README to showcase the stack at a glance.
 
 ## Tech Stack
 
