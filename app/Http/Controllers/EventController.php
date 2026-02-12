@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Data\FullEventData;
 use App\Models\Event;
+use Illuminate\Database\Eloquent\Builder;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -14,7 +15,7 @@ final class EventController
     public function index(): Response
     {
         $events = Event::query()
-            ->where(function ($query): void {
+            ->where(function (Builder $query): void {
                 $query->whereNotNull('result')
                     ->where('result', '!=', '');
             })
