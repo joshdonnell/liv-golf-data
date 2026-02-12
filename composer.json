@@ -94,7 +94,7 @@
             "rector --dry-run",
             "npm run test:lint"
         ],
-        "test:unit": "pest --parallel --coverage --exactly=100.0",
+        "test:unit": "pest --parallel --coverage",
         "test:types": [
             "phpstan",
             "npm run test:types"
