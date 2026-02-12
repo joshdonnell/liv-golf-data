@@ -14,32 +14,12 @@ withDefaults(defineProps<Props>(), {
 
 const page = usePage()
 const sideBarState = useCookies(['sidebar_state'])
-const items: NavigationMenuItem[][] = [
-  [
-    {
-      label: 'Platform',
-      type: 'label',
-    },
-    {
-      label: 'Dashboard',
-      icon: 'i-lucide-layout-grid',
-      href: dashboard().url,
-    },
-  ],
-  [
-    {
-      label: 'Github Repo',
-      icon: 'i-lucide-folder',
-      to: 'https://github.com/laravel/vue-starter-kit',
-      target: '_blank',
-    },
-    {
-      label: 'Documentation',
-      icon: 'i-lucide-book-open',
-      to: 'https://laravel.com/docs/12.x/starter-kits#vue',
-      target: '_blank',
-    },
-  ],
+const items: NavigationMenuItem[] = [
+  {
+    label: 'Events',
+    icon: 'i-lucide-layout-grid',
+    href: dashboard.url(),
+  },
 ]
 </script>
 
@@ -48,7 +28,7 @@ const items: NavigationMenuItem[][] = [
     <UDashboardSidebar
       collapsible
       resizable
-      :collapsed="page.props.sidebarOpen === false"
+      :collapsed="!page.props.sidebarOpen"
       @update:collapsed="
         sideBarState.set('sidebar_state', sideBarState.get('sidebar_state') ? 'false' : 'true', {
           path: '/',
@@ -62,15 +42,8 @@ const items: NavigationMenuItem[][] = [
       <template #default="{ collapsed }">
         <UNavigationMenu
           :collapsed="collapsed"
-          :items="items[0]"
+          :items="items"
           orientation="vertical"
-        />
-
-        <UNavigationMenu
-          :collapsed="collapsed"
-          :items="items[1]"
-          orientation="vertical"
-          class="mt-auto"
         />
       </template>
 

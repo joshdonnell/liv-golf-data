@@ -17,6 +17,10 @@ final class SeasonFactory extends Factory
     public function definition()
     {
         return [
+            'name' => $this->faker->year(),
+            'slug' => $this->faker->year(),
+            'start_date' => $this->faker->dateTime(),
+            'end_date' => $this->faker->dateTime(),
             'created_at' => \Illuminate\Support\Facades\Date::now(),
             'updated_at' => \Illuminate\Support\Facades\Date::now(),
         ];

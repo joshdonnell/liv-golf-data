@@ -69,7 +69,8 @@ You should see 100% test coverage and all quality checks passing.
 
 ### LIV Golf Data
 
-- `php artisan results:sync` — Fetchs the latest results from The Sports DB and stores them in the database
+- `php artisan app:get-events` — Fetchs the latest evemts from The Sports DB and stores them in the database
+- `php artisan app:get-results` — Fetchs the latest results from The Sports DB and stores them in the database
 
 ### Development
 

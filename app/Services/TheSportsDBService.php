@@ -43,7 +43,7 @@ final readonly class TheSportsDBService implements ResultsInterface
             'venue' => $event['strVenue'],
             'venue_country' => $event['strCountry'],
             'start_date' => $event['strTimestamp'] ? CarbonImmutable::parse($event['strTimestamp']) : null,
-            'poster' => $event['strPoster'],
+            'poster' => $event['strThumb'],
         ], $schedule);
 
         return EventData::collect($events);

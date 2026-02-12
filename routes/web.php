@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserEmailResetNotification;
@@ -14,10 +15,6 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', fn () => Inertia::render('Welcome'))->name('home');
-
-Route::middleware(['auth', 'verified'])->group(function (): void {
-    Route::get('dashboard', fn () => Inertia::render('Dashboard'))->name('dashboard');
-});
 
 Route::middleware('auth')->group(function (): void {
     // User...
@@ -40,6 +37,10 @@ Route::middleware('auth')->group(function (): void {
     // User Two-Factor Authentication...
     Route::get('settings/two-factor', [UserTwoFactorAuthenticationController::class, 'show'])
         ->name('two-factor.show');
+
+    // Events...
+    Route::get('events', [EventController::class, 'index'])->name('dashboard');
+    Route::get('events/{event}', [EventController::class, 'show'])->name('events.show');
 });
 
 Route::middleware('guest')->group(function (): void {
